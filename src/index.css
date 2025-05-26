@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base styles for Apple-inspired design */
+@layer base {
+  html {
+    font-feature-settings: 'ss01', 'ss02', 'ss03', 'ss04';
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply antialiased text-gray-900;
+    font-feature-settings: 'ss01', 'ss02', 'ss03', 'ss04';
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply tracking-tight font-light;
+  }
+}
+
+/* Custom animations */
+@keyframes pulse-down {
+  0%, 100% {
+    transform: translateY(0);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translateY(8px);
+    opacity: 1;
+  }
+}
+
+.animate-pulse-down {
+  animation: pulse-down 2s infinite;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 25px;
+  transition: all 0.3s;
+  background-color: rgba(106, 115, 125, 0.2);
+  &:hover {
+    background-color: rgba(106, 115, 125, 0.27);
+  }
+}
+
+::-webkit-scrollbar-corner {
+  display: none;
+}
